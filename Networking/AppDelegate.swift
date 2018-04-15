@@ -6,8 +6,9 @@
 //  Copyright © 2018 Shinkan. All rights reserved.
 //
 
-import UIKit
+import ReSwift
 
+var store = Store<MainState>(reducer: mainReducer, state: nil)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        window.makeKeyAndVisible()
+        window.rootViewController = QuestionViewController()
         return true
     }
 
